@@ -8,11 +8,12 @@ module.exports = {
   mode: 'development',
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    port: 3001,
+    port: 3005,
   },
   output: {
     publicPath: 'auto',
   },
+
   module: {
     rules: [
       {
@@ -26,13 +27,15 @@ module.exports = {
     ],
   },
   plugins: [
+    // To learn more about the usage of this plugin, please visit https://webpack.js.org/plugins/module-federation-plugin/
     new ModuleFederationPlugin({
-      name: 'app1',
+      name: 'nav',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './nav': './src/nav.singlespa',
+      },
       remotes: {
-        app2: 'app2@[app1Url]/remoteEntry.js',
         utils: 'utils@[utilsUrl]/remoteEntry.js',
-        header: 'header@[headerUrl]/remoteEntry.js',
-        nav: 'nav@[navUrl]/remoteEntry.js',
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
