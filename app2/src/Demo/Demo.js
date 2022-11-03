@@ -6,7 +6,7 @@ import { HEADER_USERNAME } from 'utils/Constants';
 
 console.log('APP 2 MFE Loaded');
 
-const example = (props) => {
+const Demo = (props) => {
   console.log('APP 2 MFE RENDERING');
   const [err, username] = useObservable(PubSubMFE.get(HEADER_USERNAME));
   return (
@@ -18,10 +18,10 @@ const example = (props) => {
         backgroundColor: 'orange',
       }}
     >
-      <h1>App 2 Single Spa</h1>
+      <h1>App 2 - Demo (React)</h1>
       <h3>The current user is: {username} </h3>
     </div>
   );
 };
 
-export { example };
+export { Demo };

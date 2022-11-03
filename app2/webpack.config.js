@@ -32,8 +32,8 @@ module.exports = {
       name: 'app2',
       filename: 'remoteEntry.js',
       exposes: {
-        './App': './src/App',
-        './Demo': './src/Demo.singlespa.jsx',
+        './Demo': './src/Demo/Demo.singlespa.jsx',
+        './Cart': './src/Cart/Cart.singlespa.jsx'
       },
       remotes: {
         utils: 'utils@[utilsUrl]/remoteEntry.js',

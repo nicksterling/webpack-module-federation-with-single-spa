@@ -22,6 +22,14 @@ registerApplication({
   },
 });
 
+registerApplication({
+  name: 'cart',
+  app: () => import('app2/Cart'),
+  activeWhen: '/app2/Cart',
+  customProps: {
+    some: 'value',
+  },
+});
 // Config with more expressive API
 registerApplication({
   name: 'nav',
