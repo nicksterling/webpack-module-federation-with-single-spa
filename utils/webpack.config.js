@@ -31,6 +31,7 @@ module.exports = {
       name: 'utils',
       filename: 'remoteEntry.js',
       exposes: {
+        './Constants': './src/constants',
         './PubSubMFE': './src/PubSubMFE',
         './react_hooks': './src/react/hooks/index',
       },

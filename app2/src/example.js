@@ -1,18 +1,11 @@
 import React from 'react';
 
 import { PubSubMFE } from 'utils/PubSubMFE';
-
-const handleClick = (e) => {
-  e.preventDefault();
-  console.log('The link was clicked.');
-  PubSubMFE.get('abc.def').next('Some Data from MFE2 ' + Math.random());
-  PubSubMFE.get('abc.def').next('Some Data from MFE2 ' + Math.random());
-  PubSubMFE.get('abc.def').next('Some Data from MFE2 ' + Math.random());
-  PubSubMFE.get('abc.def').next('Some Data from MFE2 ' + Math.random());
-  PubSubMFE.get('abc.def').next('Some Data from MFE2 ' + Math.random());
-};
+import { useObservable } from 'utils/react_hooks';
+import { HEADER_USERNAME } from 'utils/Constants';
 
 const example = (props) => {
+  const [err, username] = useObservable(PubSubMFE.get(HEADER_USERNAME));
   return (
     <div
       style={{
@@ -23,7 +16,7 @@ const example = (props) => {
       }}
     >
       <h1>App 2 Single Spa</h1>
-      <button onClick={handleClick}>Trigger Event from App 2</button>
+      <h3>The current user is: {username} </h3>
     </div>
   );
 };
