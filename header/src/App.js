@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect, useState } from 'react';
+import React from 'react';
 import { PubSubMFE } from 'utils/PubSubMFE';
 import { useObservable } from 'utils/react_hooks';
 import { HEADER_USERNAME, HEADER_USERID } from 'utils/Constants';
