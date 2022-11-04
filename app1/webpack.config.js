@@ -28,7 +28,7 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app1',
       remotes: {
-        app2: 'app2@http://localhost:3002/remoteEntry.js',
+        shopping: 'shopping@http://localhost:3002/remoteEntry.js',
         utils: 'utils@http://localhost:3003/remoteEntry.js',
         header: 'header@http://localhost:3004/remoteEntry.js',
         nav: 'nav@http://localhost:3005/remoteEntry.js',

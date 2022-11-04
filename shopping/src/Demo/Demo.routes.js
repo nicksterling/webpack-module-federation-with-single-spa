@@ -1,7 +1,7 @@
 const DEMO_ROUTES = {
   DEMO: {
     NAME: 'DEMO APPLICATION',
-    URL: '/app2/demo',
+    URL: '/shopping/demo',
   },
 };
 

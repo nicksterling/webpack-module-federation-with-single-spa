@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CART_ROUTES, DEMO_ROUTES } from 'app2/routes';
+import { CART_ROUTES, DEMO_ROUTES } from 'shopping/routes';
 
 const App = () => {
   const navigate = (url) => {

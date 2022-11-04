@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     // To learn more about the usage of this plugin, please visit https://webpack.js.org/plugins/module-federation-plugin/
     new ModuleFederationPlugin({
-      name: 'app2',
+      name: 'shopping',
       filename: 'remoteEntry.js',
       exposes: {
         './Demo': './src/Demo/Demo.singlespa.jsx',
