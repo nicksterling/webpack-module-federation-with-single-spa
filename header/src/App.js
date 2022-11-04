@@ -17,14 +17,7 @@ const App = () => {
 
   return (
     <div>
-      <div
-        style={{
-          margin: '10px',
-          padding: '10px',
-          textAlign: 'center',
-          backgroundColor: 'red',
-        }}
-      >
+      <div>
         <h1>Header</h1>
         <h3>Username: {user}</h3>
         <h3>User ID: {id}</h3>

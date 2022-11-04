@@ -6,13 +6,7 @@ const App = () => {
   };
 
   return (
-    <div
-      style={{
-        margin: '10px',
-        padding: '10px',
-        backgroundColor: 'green',
-      }}
-    >
+    <div>
       <h1
         style={{
           textAlign: 'center',
@@ -27,7 +21,9 @@ const App = () => {
         <li>
           <button onClick={() => navigate('/App2/Demo')}>App2/Demo</button>
         </li>
-        <li><button onClick={() => navigate('/App2/Cart')}>App2/Cart</button></li>
+        <li>
+          <button onClick={() => navigate('/App2/Cart')}>App2/Cart</button>
+        </li>
       </ul>
     </div>
   );
