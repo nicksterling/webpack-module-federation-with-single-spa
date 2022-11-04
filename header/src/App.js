@@ -1,7 +1,7 @@
 import React from 'react';
 import { PubSubMFE } from 'utils/PubSubMFE';
 import { useObservable } from 'utils/react_hooks';
-import { HEADER_USERNAME, HEADER_USERID } from 'utils/Constants';
+import { HEADER_USERNAME, HEADER_USERID } from './Constants';
 
 //Set up some initialization logic
 const Username = PubSubMFE.get(HEADER_USERNAME);

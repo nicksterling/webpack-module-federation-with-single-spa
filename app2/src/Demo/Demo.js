@@ -2,7 +2,7 @@ import React from 'react';
 
 import { PubSubMFE } from 'utils/PubSubMFE';
 import { useObservable } from 'utils/react_hooks';
-import { HEADER_USERNAME } from 'utils/Constants';
+import { HEADER_USERNAME } from 'header/Constants';
 
 // console.log('APP 2 MFE Loaded');
 

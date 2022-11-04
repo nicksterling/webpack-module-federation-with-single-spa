@@ -32,6 +32,7 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './header': './src/header.singlespa',
+        './Constants': './src/Constants',
       },
       remotes: {
         utils: 'utils@http://localhost:3003/remoteEntry.js',

@@ -36,6 +36,7 @@ module.exports = {
         './routes': './src/routes',
       },
       remotes: {
+        header: 'header@http://localhost:3004/remoteEntry.js',
         utils: 'utils@http://localhost:3003/remoteEntry.js',
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
