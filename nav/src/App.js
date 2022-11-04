@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CART_ROUTES } from 'app2/routes';
+import { CART_ROUTES, DEMO_ROUTES } from 'app2/routes';
 
 const App = () => {
   const navigate = (url) => {
@@ -15,7 +15,9 @@ const App = () => {
           <button onClick={() => navigate('/')}>EMPTY ROUTE</button>
         </li>
         <li>
-          <button onClick={() => navigate('/App2/Demo')}>App2/Demo</button>
+          <button onClick={() => navigate(DEMO_ROUTES.DEMO.URL)}>
+            {DEMO_ROUTES.DEMO.NAME}
+          </button>
         </li>
         <li>
           <button onClick={() => navigate(CART_ROUTES.CART.URL)}>

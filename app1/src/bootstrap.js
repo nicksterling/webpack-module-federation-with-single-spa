@@ -1,4 +1,5 @@
 import { registerApplication, start } from 'single-spa';
+import { CART_ROUTES, DEMO_ROUTES } from 'app2/routes';
 
 registerApplication({
   name: 'header',
@@ -12,7 +13,7 @@ registerApplication({
 registerApplication({
   name: 'demo',
   app: () => import('app2/Demo'),
-  activeWhen: '/app2/Demo',
+  activeWhen: DEMO_ROUTES.DEMO.URL,
   customProps: {
     some: 'value',
   },
@@ -21,7 +22,7 @@ registerApplication({
 registerApplication({
   name: 'cart',
   app: () => import('app2/Cart'),
-  activeWhen: '/app2/Cart',
+  activeWhen: CART_ROUTES.CART.URL,
   customProps: {
     some: 'value',
   },
