@@ -35,6 +35,7 @@ module.exports = {
         './nav': './src/nav.singlespa',
       },
       remotes: {
+        app2: 'app2@http://localhost:3002/remoteEntry.js',
         utils: 'utils@[utilsUrl]/remoteEntry.js',
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },

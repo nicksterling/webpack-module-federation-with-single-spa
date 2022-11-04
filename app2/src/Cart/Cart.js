@@ -4,10 +4,10 @@ import { PubSubMFE } from 'utils/PubSubMFE';
 import { useObservable } from 'utils/react_hooks';
 import { HEADER_USERNAME } from 'utils/Constants';
 
-console.log('APP 2 MFE Loaded');
+// console.log('APP 2 MFE Loaded');
 
 const Cart = (props) => {
-  console.log('APP 2 MFE RENDERING');
+  // console.log('APP 2 MFE RENDERING');
   const [err, username] = useObservable(PubSubMFE.get(HEADER_USERNAME));
   return (
     <div

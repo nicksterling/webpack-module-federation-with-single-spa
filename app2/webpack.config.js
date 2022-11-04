@@ -33,7 +33,8 @@ module.exports = {
       filename: 'remoteEntry.js',
       exposes: {
         './Demo': './src/Demo/Demo.singlespa.jsx',
-        './Cart': './src/Cart/Cart.singlespa.jsx'
+        './Cart': './src/Cart/Cart.singlespa.jsx',
+        './routes': './src/routes',
       },
       remotes: {
         utils: 'utils@[utilsUrl]/remoteEntry.js',
