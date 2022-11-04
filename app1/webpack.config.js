@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
-const ExternalTemplateRemotesPlugin = require('external-remotes-plugin');
 const path = require('path');
 
 module.exports = {
@@ -29,14 +28,13 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'app1',
       remotes: {
-        app2: 'app2@[app1Url]/remoteEntry.js',
-        utils: 'utils@[utilsUrl]/remoteEntry.js',
-        header: 'header@[headerUrl]/remoteEntry.js',
-        nav: 'nav@[navUrl]/remoteEntry.js',
+        app2: 'app2@http://localhost:3002/remoteEntry.js',
+        utils: 'utils@http://localhost:3003/remoteEntry.js',
+        header: 'header@http://localhost:3004/remoteEntry.js',
+        nav: 'nav@http://localhost:3005/remoteEntry.js',
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
-    new ExternalTemplateRemotesPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
