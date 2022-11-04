@@ -1,6 +1,5 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { ModuleFederationPlugin } = require('webpack').container;
-const ExternalTemplateRemotesPlugin = require('external-remotes-plugin');
 const path = require('path');
 
 module.exports = {
@@ -35,11 +34,10 @@ module.exports = {
         './header': './src/header.singlespa',
       },
       remotes: {
-        utils: 'utils@[utilsUrl]/remoteEntry.js',
+        utils: 'utils@http://localhost:3003/remoteEntry.js',
       },
       shared: { react: { singleton: true }, 'react-dom': { singleton: true } },
     }),
-    new ExternalTemplateRemotesPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
     }),
