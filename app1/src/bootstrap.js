@@ -9,7 +9,6 @@ registerApplication({
   },
 });
 
-// Config with more expressive API
 registerApplication({
   name: 'demo',
   app: () => import('app2/Demo'),
@@ -27,7 +26,7 @@ registerApplication({
     some: 'value',
   },
 });
-// Config with more expressive API
+
 registerApplication({
   name: 'nav',
   app: () => import('nav/nav'),
