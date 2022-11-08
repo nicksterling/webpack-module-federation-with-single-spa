@@ -7,20 +7,34 @@ import { HEADER_USERNAME, HEADER_USERID } from './Constants';
 const Username = PubSubMFE.get(HEADER_USERNAME);
 const UserID = PubSubMFE.get(HEADER_USERID);
 
+const grabUserInfo = () => {
+  const min = 1;
+  const max = 100;
+  const range = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  fetch('https://dummyjson.com/users/' + range)
+    .then((res) => res.json())
+    .then((res2) => {
+      Username.next(res2.firstName + ' ' + res2.lastName);
+      UserID.next(res2.ssn);
+      console.log(res2);
+    });
+};
+
+grabUserInfo();
+
 const App = () => {
   const [userError, user] = useObservable(Username);
   const [idError, id] = useObservable(UserID);
 
   const grabUser = () => {
-    //Set the username for anyone who cares
-    Username.next('Jean-Luc Picard');
-    UserID.next('1701-D');
+    grabUserInfo();
   };
 
   return (
     <div>
       <div>
-        <button onClick={grabUser}>Grab User</button>
+        <button onClick={grabUser}>Grab New User</button>
         <h1>Header</h1>
         <h3>Username: {user}</h3>
         <h3>User ID: {id}</h3>
