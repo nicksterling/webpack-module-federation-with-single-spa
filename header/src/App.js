@@ -7,17 +7,20 @@ import { HEADER_USERNAME, HEADER_USERID } from './Constants';
 const Username = PubSubMFE.get(HEADER_USERNAME);
 const UserID = PubSubMFE.get(HEADER_USERID);
 
-//Set the username for anyone who cares
-Username.next('Jean-Luc Picard');
-UserID.next('1701-D');
-
 const App = () => {
   const [userError, user] = useObservable(Username);
   const [idError, id] = useObservable(UserID);
 
+  const grabUser = () => {
+    //Set the username for anyone who cares
+    Username.next('Jean-Luc Picard');
+    UserID.next('1701-D');
+  };
+
   return (
     <div>
       <div>
+        <button onClick={grabUser}>Grab User</button>
         <h1>Header</h1>
         <h3>Username: {user}</h3>
         <h3>User ID: {id}</h3>
